@@ -20,6 +20,7 @@ public class Employee extends Thread implements Comparable<Employee> {
 		return this.employeeType.getPriority();
 	}
 
+	
 	public int compareTo(Employee e2) {
 		if (this.getPrioridad() < e2.getPrioridad()) {
 			return -1;
@@ -37,6 +38,7 @@ public class Employee extends Thread implements Comparable<Employee> {
 
 	// Ejecución del hilo, representa que el empleado esta atendiendo la llamada.
 	// El hilo queda en espera (sleep) durante el tiempo de la llamada.
+	@Override
 	public void run() {
 		try {
 			Thread.sleep(1000 * callAnswer.getDuration());
